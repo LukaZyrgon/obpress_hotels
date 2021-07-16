@@ -1,0 +1,239 @@
+.obpress-hotels-holder {
+  background-color: #f3f3f3;
+  font-family: "Montserrat", Sans-serif;
+}
+
+.obpress-hotels-title p {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 12px;
+  margin-top: 0px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.obpress-hotels-title h3 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 58px;
+  margin-top: 0px;
+  padding-bottom: 73px;
+  margin-bottom: 0px;
+}
+
+.obpress-hotels-title p,
+.obpress-hotels-title h3 {
+  text-align: center;
+}
+
+.obpress-hotels-widget-holder {
+  display: flex;
+  max-width: 1254px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 516px;
+}
+
+.obpress-hotel-widget-gallery {
+  max-width: 615px;
+  position: relative;
+  height: 514px;
+}
+
+.obpress-hotels-widget-info {
+  max-width: 622px;
+  background-color: #fff;
+  margin-right: 9px;
+  display: flex;
+  flex-direction: column;
+  padding: 86px 122px 53px 122px;
+}
+
+.obpress-hotels-widget-info h3 {
+  margin-top: 0px;
+  margin-bottom: 53px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 45px;
+  text-align: center;
+}
+
+.obpress-hotels-widget-info p {
+  font-size: 14px;
+  margin-top: 0px;
+  margin-bottom: 72px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.obpress-hotels-widget-button {
+  background-color: #000000;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2.8px;
+  color: #fff;
+  font-family: "Montserrat";
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 65px;
+  margin-bottom: 22px;
+}
+
+.obpress-hotels-widget-button:hover {
+  cursor: pointer;
+}
+
+.obpress-hotels-link {
+  text-align: center;
+  text-decoration: underline !important;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.obpress-hotels-link:hover {
+  color: #4b8cf4;
+}
+
+.obpress-hotels-swiper {
+    height: 100%;
+}
+
+.obpress-hotels-swiper-image {
+  width: 303px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+ 
+.obpress-hotel-swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.obpress-hotel-widget-gallery .swiper-wrapper {
+    align-items: center;
+}
+
+.obpress-hotels-swiper .swiper-slide {
+  height: 166px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.obpress-hotels-swiper .swiper-slide:nth-child(3n + 2),
+.obpress-hotels-swiper .swiper-slide:nth-child(3n + 3) {
+  margin-top: 0px!important;
+}
+
+.obpress-hotels-swiper .obpress-swiper-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    opacity: 1;
+}
+
+.obpress-hotels-swiper .obpress-swiper-overlay:hover {
+    cursor: pointer;
+}
+
+.obpress-hotels-swiper .obpress-overlay-selected {
+    opacity: 0;
+}
+
+/* .obpress-overlay-not-selected {
+    opacity: 1!important;
+}  */
+
+
+/* .obpress-hotels-swiper .swiper-wrapper .swiper-slide:first-child .obpress-swiper-overlay {
+    opacity: 0;
+} */
+
+.obpress-hotels-swiper .obpress-swiper-overlay h4 {
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3.2px;
+    line-height: 24px;
+}
+
+.obpress-hotels-swiper-nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: -55px;
+}
+
+.obpress-hotels-swiper-nav .swiper-button-prev,
+.obpress-hotels-swiper-nav .swiper-pagination,
+.obpress-hotels-swiper-nav .swiper-button-next {
+  position: static;
+}
+
+.obpress-hotels-swiper-nav .swiper-button-prev,
+.obpress-hotels-swiper-nav .swiper-button-next {
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    margin-top: 0px;    
+}
+
+.obpress-hotels-swiper-nav .swiper-button-prev {
+    background-image: url(../icons/prev.svg);
+    margin-right: 80px;    
+}
+
+.obpress-hotels-swiper-nav .swiper-button-next {
+    background-image: url(../icons/next.svg);
+    margin-left: 80px;
+}
+
+.obpress-hotels-swiper-nav .swiper-pagination-bullet {
+    margin-right: 10px;    
+}
+
+.obpress-hotels-swiper-lines .swiper-pagination-bullet {
+  border-radius: 0px;
+  width: 20px;
+}
+
+.obpress-hotels-swiper-lines .swiper-pagination-bullet-active {
+  width: 30px;
+}
+
+.obpress-swiper-pagination-disabled {
+  display: none!important;
+}
+
+.obpress-hotels-swiper-nav .swiper-pagination-bullet:last-child {
+  margin-right: 0px;
+}
