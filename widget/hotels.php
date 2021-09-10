@@ -2,6 +2,24 @@
 
 class Hotels extends \Elementor\Widget_Base
 {
+	public function __construct($data = [], $args = null) {
+		parent::__construct($data, $args);
+		
+		wp_register_script( 'hotels_js',  plugins_url( '/OBPress_Hotels/widget/assets/js/hotels.js'), array('jquery'), [ 'elementor-frontend' ], '1.0.0', true );
+
+		wp_register_style( 'hotels_css', plugins_url( '/OBPress_Hotels/widget/assets/css/hotels.css') );        
+	}
+	
+	public function get_script_depends()
+	{
+		return ['hotels_js'];
+	}
+
+	public function get_style_depends()
+	{
+		return ['hotels_css'];
+	}
+	
 	public function get_name()
 	{
 		return 'Hotels';
@@ -304,7 +322,11 @@ class Hotels extends \Elementor\Widget_Base
 	
 
 
-		$hotels = BeApi::getHotelSearchForChain($chain, "true", $language);
+		// $hotels = BeApi::getHotelSearchForChain($chain, "true", $language);
+
+        $hotels = BeApi::ApiCache('hotel_search_chain_'.$chain.'_'.$language.'_true', BeApi::$cache_time['hotel_search_chain'], function() use ($chain, $language){
+            return BeApi::getHotelSearchForChain($chain, "true",$language);
+        });
 
 		if ($hotels->PropertiesType != null) {
 			$properties = $hotels->PropertiesType->Properties;

@@ -139,10 +139,6 @@ final class OBPress_Hotels_Widget {
 
         add_action('elementor/widgets/widgets_registered', [ $this, 'init_widgets']);
 
-        add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles']);
-
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
-
         add_action('elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories']);
 
     }
@@ -155,17 +151,6 @@ final class OBPress_Hotels_Widget {
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Hotels() );
 		
-
-	}
-
-	public function widget_styles() {
-		wp_register_style( 'hotels_css', plugins_url( '/OBPress_Hotels/widget/assets/css/hotels.css') );        
-        wp_enqueue_style('hotels_css');
-	}
-
-	public function widget_scripts() {
-		wp_register_script( 'hotels_js',  plugins_url( '/OBPress_Hotels/widget/assets/js/hotels.js'), array('jquery'), null, true );
-		wp_enqueue_script('hotels_js');
 
 	}
 
