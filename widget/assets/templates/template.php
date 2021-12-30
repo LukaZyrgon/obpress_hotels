@@ -3,7 +3,7 @@
         <div class="obpress-hotels-widget-info">
             <h3><?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelName ?></h3>
             <p><?= $firstHotelDesc ?></p>
-            <button class="obpress-hotels-widget-button">See more</button>
+            <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button">See more</a>
             <a href="#" class="obpress-hotels-link">Ver todos os hotéis</a>
         </div>
         <div class="obpress-hotel-widget-gallery">
@@ -23,7 +23,8 @@
                                     }
                                 }
                                 ?>
-                                <div class="swiper-slide obpress-hotels-swiper-slide" data-hotel-description="<?= $hotel_description ?>" data-hotel-name="<?= $HotelDescriptiveContent->HotelRef->HotelName ?>">
+
+                                <div data-hotel-id="<?php echo $HotelDescriptiveContent->HotelRef->HotelCode; ?>" class="swiper-slide obpress-hotels-swiper-slide" data-hotel-description="<?= $hotel_description ?>" data-hotel-name="<?= $HotelDescriptiveContent->HotelRef->HotelName ?>">
                                     <div class="obpress-hotels-swiper-image" style="background-image:url(<?= $HotelDescriptiveContent->ImageURL ?>);"></div>
                                     <div class="obpress-swiper-overlay">
                                         <h4><?= $HotelDescriptiveContent->HotelRef->HotelName ?></h4>
