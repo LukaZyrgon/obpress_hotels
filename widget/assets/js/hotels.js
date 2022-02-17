@@ -5,7 +5,7 @@ jQuery(window).on("elementor/frontend/init", function () {
   elementorFrontend.hooks.addAction(
     "frontend/element_ready/Hotels.default",
     function ($scope, $) {
-      const swiper = new Swiper(".obpress-hotels-swiper .swiper-container", {
+      var swiper = new Swiper(".obpress-hotels-swiper .swiper-container", {
         // Optional parameters
         direction: "horizontal",
         slidesPerView: 2,
@@ -66,6 +66,21 @@ jQuery(window).on("elementor/frontend/init", function () {
     
             jQuery('.obpress-overlay-selected').css('opacity', '0');
         });
+
+      var swiper = new Swiper(".ob-mob-hotels-holder .swiper-container", {
+        direction: "horizontal",
+        slidesPerView: 1,
+
+        pagination: {
+          el: ".ob-mob-hotels-holder .swiper-pagination",
+        },
+    
+        // Navigation arrows
+        navigation: {
+          nextEl: ".ob-mob-hotels-holder .swiper-button-next",
+          prevEl: ".ob-mob-hotels-holder .swiper-button-prev",
+        },        
+      })
     }
   );
 });

@@ -184,6 +184,7 @@
     font-size: 16px;
     letter-spacing: 3.2px;
     line-height: 24px;
+    text-align: center;
 }
 
 .obpress-hotels-swiper-nav {
@@ -238,4 +239,89 @@
 
 .obpress-hotels-swiper-nav .swiper-pagination-bullet:last-child {
   margin-right: 0px;
+}
+
+.ob-mob-hotels-holder {
+  display: none;
+}
+
+@media (max-width: 1279px) {
+
+  .obpress-hotels-holder {
+    display: none;
+  }
+
+  .ob-mob-hotels-holder {
+    display: block;
+  }
+
+
+  .ob-mob-hotels-slide {
+    position: relative;
+    height: 382px;
+  }
+
+  .ob-mob-hotels-swiper-image{
+    height: 100%;
+    background-size: cover;
+  }
+
+  .ob-mob-hotels-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.38);
+    padding: 30px 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ob-mob-hotels-overlay h4 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.48px;
+    margin-bottom: 17px;
+    color: #fff;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .ob-mob-hotels-overlay p {
+    font-size: 12px;
+    color: #FFF;
+    line-height: 22px; 
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 7px;
+  }
+
+  .ob-mob-hotels-overlay button {
+    padding: 7px 36px;
+    background-color: #000000;
+    color: #fff;
+    border-width: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .ob-mob-hotels-overlay a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .obpress-hotels-swiper-nav {
+    bottom: 0px;
+  }
+
+  .obpress-hotels-swiper-nav .swiper-button-prev, .obpress-hotels-swiper-nav .swiper-button-next {
+    width: 25px;
+    height: 25px;
+  }
+
 }
