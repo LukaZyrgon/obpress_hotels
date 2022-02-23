@@ -316,7 +316,9 @@
   }
 
   .obpress-hotels-swiper-nav {
-    bottom: 0px;
+    /* bottom: 0px; */
+    position: static;
+    margin-top: 20px;
   }
 
   .obpress-hotels-swiper-nav .swiper-button-prev, .obpress-hotels-swiper-nav .swiper-button-next {
