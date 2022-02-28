@@ -4,7 +4,7 @@
             <h3><?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelName ?></h3>
             <p><?= $firstHotelDesc ?></p>
             <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button">See more</a>
-            <a href="/chain-results" class="obpress-hotels-link">Ver todos os hotéis</a>
+            <a href="/chain-results" class="obpress-hotels-link">See all hotels</a>
         </div>
         <div class="obpress-hotel-widget-gallery">
             <div class="obpress-hotels-swiper">
