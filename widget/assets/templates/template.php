@@ -3,8 +3,8 @@
         <div class="obpress-hotels-widget-info">
             <h3><?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelName ?></h3>
             <p><?= $firstHotelDesc ?></p>
-            <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button">See more</a>
-            <a href="/chain-results" class="obpress-hotels-link">See all hotels</a>
+            <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button"><?php _e('See more', 'OBPress_Hotels') ?></a>
+            <a href="/chain-results" class="obpress-hotels-link"><?php _e('See all hotels', 'OBPress_Hotels') ?></a>
         </div>
         <div class="obpress-hotel-widget-gallery">
             <div class="obpress-hotels-swiper">
@@ -62,8 +62,8 @@
                             <div class="ob-mob-hotels-overlay">
                                 <h4><?= $HotelDescriptiveContent->HotelRef->HotelName ?></h4>
                                 <p><?= $hotel_description ?></p>
-                                <button>See More</button>
-                                <a href="">See more about hotels</a>
+                                <button><?php _e('See more', 'OBPress_Hotels') ?></button>
+                                <a href=""><?php _e('See more about hotels', 'OBPress_Hotels') ?></a>
                             </div>
                         </div>
                     <?php endforeach; ?>

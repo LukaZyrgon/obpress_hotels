@@ -27,7 +27,7 @@ class Hotels extends \Elementor\Widget_Base
 
 	public function get_title()
 	{
-		return __('Hotels', 'plugin-name');
+		return __('Hotels', 'OBPress_Hotels');
 	}
 
 	public function get_icon()
@@ -46,7 +46,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'color_section',
 			[
-				'label' => __('Colors', 'plugin-name'),
+				'label' => __('Colors', 'OBPress_Hotels'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -95,7 +95,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'link_section',
 			[
-				'label' => __('Link', 'plugin-name'),
+				'label' => __('Link', 'OBPress_Hotels'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -128,7 +128,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'overlay_section',
 			[
-				'label' => __('Overlay', 'plugin-name'),
+				'label' => __('Overlay', 'OBPress_Hotels'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -136,7 +136,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->add_control(
 			'hotels_overlay_opacity_control',
 			[
-				'label' => __('Hotels Overlay Opacity', 'OBPress_Incentives'),
+				'label' => __('Hotels Overlay Opacity', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['opacity'],
 				'range' => [
@@ -159,7 +159,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->add_control(
 			'hotels_overlay_transition_control',
 			[
-				'label' => __('Hotels Overlay Transition(s)', 'OBPress_Incentives'),
+				'label' => __('Hotels Overlay Transition(s)', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['seconds'],
 				'range' => [
@@ -178,19 +178,6 @@ class Hotels extends \Elementor\Widget_Base
 				],				
 			]
 		);		
-
-		// $this->add_control(
-		// 	'obpress_hotels_link_color',
-		// 	[
-		// 		'label' => __('Hotel Link Color', 'OBPress_Hotels'),
-		// 		'type' => \Elementor\Controls_Manager::COLOR,
-		// 		'input_type' => 'color',
-		// 		'default' => '#000',
-		// 		'selectors' => [
-		// 			'.obpress-hotels-link' => 'color: {{obpress_hotels_box_text_color}}',
-		// 		],
-		// 	]
-		// );
 
 		$this->end_controls_section();
 
@@ -256,11 +243,10 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-
 		$this->add_control(
 			'hotels_slide_pagination',
 			[
-				'label' => __( 'Hotels Pagination', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Hotels Pagination', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'lines',
 				'options' => [
@@ -274,7 +260,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_hotels_pagination_bullet_color',
 			[
-				'label' => __('Pagination Bullet Color', 'OBPress_SpecialOffers'),
+				'label' => __('Pagination Bullet Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -287,7 +273,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_hotels_pagination_bullet_back_icon',
 			[
-				'label' => __( 'Back Icon', 'text-domain' ),
+				'label' => __( 'Back Icon', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
@@ -295,7 +281,7 @@ class Hotels extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_hotels_pagination_bullet_next_icon',
 			[
-				'label' => __( 'Next Icon', 'text-domain' ),
+				'label' => __( 'Next Icon', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
