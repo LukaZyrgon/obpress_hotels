@@ -76,11 +76,13 @@
   letter-spacing: 2.8px;
   color: #fff;
   font-family: "Montserrat";
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   padding: 16px 65px;
   margin-bottom: 22px;
   box-shadow: 0px 14px 34px #bead8e33;
+  width: fit-content;
+  align-self: center;
 }
 
 .obpress-hotels-widget-button:hover {
@@ -210,6 +212,11 @@
     margin-top: 0px;    
 }
 
+.obpress-hotels-swiper-nav .swiper-button-prev::after, 
+.obpress-hotels-swiper-nav .swiper-button-next::after {
+  content: unset;
+}
+
 .obpress-hotels-swiper-nav .swiper-button-prev {
     background-image: url(../icons/prev.svg);
     margin-right: 80px;    
@@ -221,7 +228,9 @@
 }
 
 .obpress-hotels-swiper-nav .swiper-pagination-bullet {
-    margin-right: 10px;    
+    margin-right: 10px;   
+    background-color: #000000; 
+    height: 8px;
 }
 
 .obpress-hotels-swiper-lines .swiper-pagination-bullet {
@@ -231,6 +240,7 @@
 
 .obpress-hotels-swiper-lines .swiper-pagination-bullet-active {
   width: 30px;
+  background-color: #000000;
 }
 
 .obpress-swiper-pagination-disabled {

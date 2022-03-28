@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="obpress-hotels-swiper-nav">
-                <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image:<?= '. $prevIcon . '?>"';} ?>></div>
+                <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image: url('. $prevIcon . ')"';} ?>></div>
                 <div class="swiper-pagination <?php if($settings_hotels['hotels_slide_pagination'] == 'lines'){echo 'obpress-hotels-swiper-lines';} ?><?php if($settings_hotels['hotels_slide_pagination'] == 'disabled'){echo 'obpress-swiper-pagination-disabled';} ?>"></div>
-                <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image:<?= '. $nextIcon . '?>"';} ?>></div>
+                <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image: url( '. $nextIcon . ')"';} ?>></div>
             </div>
         </div>
     </div>
@@ -71,9 +71,9 @@
             </div>
         </div>
         <div class="obpress-hotels-swiper-nav">
-            <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image:<?= '. $prevIcon . '?>"';} ?>></div>
+            <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image: url( '. $prevIcon . ')"';} ?>></div>
             <div class="swiper-pagination <?php if($settings_hotels['hotels_slide_pagination'] == 'lines'){echo 'obpress-hotels-swiper-lines';} ?><?php if($settings_hotels['hotels_slide_pagination'] == 'disabled'){echo 'obpress-swiper-pagination-disabled';} ?>"></div>
-            <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image:<?= '. $nextIcon . '?>"';} ?>></div>
+            <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image: url('. $nextIcon . ')"';} ?>></div>
         </div>        
     </div>
 </div>
