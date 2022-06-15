@@ -25,6 +25,12 @@ jQuery(window).on("elementor/frontend/init", function () {
           prevEl: ".obpress-hotel-widget-gallery .swiper-button-prev",
         },
       });
+
+      if (  jQuery(".obpress-hotels-holder").hasClass("single-hotel-holder") ) {
+         var isSingleHotel = true;
+      } else {
+          var isSingleHotel = false;
+      }
     
       jQuery('.obpress-swiper-overlay').first().addClass('obpress-overlay-selected');
     
@@ -37,7 +43,13 @@ jQuery(window).on("elementor/frontend/init", function () {
 
         jQuery(".obpress-hotels-widget-info").find("h3").text(hotelName);
         jQuery(".obpress-hotels-widget-info").find("p").text(hotelDesc);
-        jQuery(".obpress-hotels-widget-info").find(".obpress-hotels-widget-button").attr("href", "/hotel-results?q=" + hotelId );
+
+        if (isSingleHotel == false ) {
+          jQuery(".obpress-hotels-widget-info").find(".obpress-hotels-widget-button").attr("href", "/hotel-results?q=" + hotelId );
+        } else {
+          jQuery(".obpress-hotels-widget-info").find(".obpress-hotels-widget-button").attr("href", "/room/?room_id=" + hotelId );
+        }
+        
     
         jQuery(this).find('.obpress-swiper-overlay').addClass('obpress-overlay-selected');
     

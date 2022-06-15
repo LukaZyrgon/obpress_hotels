@@ -1007,12 +1007,20 @@ class Hotels extends \Elementor\Widget_Base
 		$language = Lang_Curr_Functions::getLanguage();
 	
 
-
 		// $hotels = BeApi::getHotelSearchForChain($chain, "true", $language);
 
         $hotels = BeApi::ApiCache('hotel_search_chain_'.$chain.'_'.$language.'_true', BeApi::$cache_time['hotel_search_chain'], function() use ($chain, $language){
             return BeApi::getHotelSearchForChain($chain, "true",$language);
         });
+
+
+
+        // See if its single hotel or chain
+        if ( count( $hotels->PropertiesType->Properties) == 1 ) {
+        	$singleHotel = true;
+        } else {
+        	$singleHotel = false;
+        }
 
 		if ($hotels->PropertiesType != null) {
 			$properties = $hotels->PropertiesType->Properties;
@@ -1051,6 +1059,35 @@ class Hotels extends \Elementor\Widget_Base
 			$nextIcon = $settings_hotels['obpress_hotels_pagination_bullet_next_icon']['value']['url'];
 		}
 
-		require_once(WP_PLUGIN_DIR . '/OBPress_Hotels/widget/assets/templates/template.php');
+
+		// get rooms for single hotel only
+		if ($singleHotel == true) {
+
+
+				$descriptive_infos = BeApi::ApiCache('descriptive_infos_'.$chain.'_'.$language, BeApi::$cache_time['descriptive_infos'], function() use($hotels_in_chain, $language){
+					return BeApi::getHotelDescriptiveInfos($hotels_in_chain, $language);
+				});
+
+
+				$rooms = [];
+
+				foreach ($descriptive_infos->HotelDescriptiveContentsType->HotelDescriptiveContents as $HotelDescriptiveContent) {
+					foreach($HotelDescriptiveContent->FacilityInfo->GuestRoomsType->GuestRooms as $GuestRoom) {
+						$rooms[$HotelDescriptiveContent->HotelRef->HotelCode][$GuestRoom->ID] = $GuestRoom;
+					}
+				}
+
+
+
+		}
+
+
+		// go to speficif template, regarding its is single or chain
+		if ($singleHotel == false ) { 
+			require_once(WP_PLUGIN_DIR . '/OBPress_Hotels/widget/assets/templates/template.php');
+		} else {
+			require_once(WP_PLUGIN_DIR . '/OBPress_Hotels/widget/assets/templates/single_hotel_template.php');
+		}
+
 	}
 }
