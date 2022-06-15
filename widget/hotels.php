@@ -101,9 +101,9 @@ class Hotels extends \Elementor\Widget_Base
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'default' => [
 					'top' => '86',
-					'right' => '122',
+					'right' => '100',
 					'bottom' => '53',
-					'left' => '122',
+					'left' => '100',
 					'isLinked' => false
 				],
 				'size_units' => [ 'px', '%', 'em' ],
@@ -1035,8 +1035,8 @@ class Hotels extends \Elementor\Widget_Base
 			}
 		}
 
-		if(strlen($firstHotelDesc) > 230) {
-			$firstHotelDesc = substr($firstHotelDesc, 0, 230) . '...';
+		if(strlen($firstHotelDesc) > 120) {
+			$firstHotelDesc = substr($firstHotelDesc, 0, 120) . '...';
 		}
 
 		$prevIcon = "";

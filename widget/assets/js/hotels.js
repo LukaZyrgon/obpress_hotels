@@ -5,26 +5,30 @@ jQuery(window).on("elementor/frontend/init", function () {
   elementorFrontend.hooks.addAction(
     "frontend/element_ready/Hotels.default",
     function ($scope, $) {
-      var swiper = new Swiper(".obpress-hotels-swiper .swiper-container", {
-        // Optional parameters
-        direction: "horizontal",
-        slidesPerView: 2,
-        slidesPerColumn: 3,
-        slidesPerColumnFill: "column",
-        // slidesPerGroup: 3,
-        spaceBetween: 9,
-
-        // If we need pagination
-        pagination: {
-          el: ".obpress-hotel-widget-gallery .swiper-pagination",
-        },
-    
-        // Navigation arrows
-        navigation: {
-          nextEl: ".obpress-hotel-widget-gallery .swiper-button-next",
-          prevEl: ".obpress-hotel-widget-gallery .swiper-button-prev",
-        },
-      });
+      var numberOfSlides = $('.obpress-hotels-swiper-slide').length;
+      if(numberOfSlides > 6) {
+        var swiper = new Swiper(".obpress-hotels-swiper .swiper-container", {
+          // Optional parameters
+          direction: "horizontal",
+          slidesPerView: 2,
+          slidesPerColumn: 3,
+          slidesPerColumnFill: "column",
+          // slidesPerGroup: 3,
+          spaceBetween: 9,
+  
+          // If we need pagination
+          pagination: {
+            el: ".obpress-hotel-widget-gallery .swiper-pagination",
+          },
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: ".obpress-hotel-widget-gallery .swiper-button-next",
+            prevEl: ".obpress-hotel-widget-gallery .swiper-button-prev",
+          },
+        });
+      }
+      
     
       jQuery('.obpress-swiper-overlay').first().addClass('obpress-overlay-selected');
     

@@ -2,11 +2,13 @@
     <div class="obpress-hotels-widget-holder">
         <div class="obpress-hotels-widget-info">
             <h3><?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelName ?></h3>
-            <p><?= $firstHotelDesc ?></p>
-            <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button"><?php _e('See more', 'OBPress_Hotels') ?></a>
-            <a href="/chain-results" class="obpress-hotels-link"><?php _e('See all hotels', 'OBPress_Hotels') ?></a>
+            <div class="obpress-hotels-widget-info-holder">
+                <p><?= $firstHotelDesc ?></p>
+                <a href="/hotel-results?q=<?= array_values($HotelDescriptiveContents)[0]->HotelRef->HotelCode ?>" class="obpress-hotels-widget-button"><?php _e('See more', 'OBPress_Hotels') ?></a>
+                <a href="/chain-results" class="obpress-hotels-link"><?php _e('See all hotels', 'OBPress_Hotels') ?></a>
+            </div>
         </div>
-        <div class="obpress-hotel-widget-gallery">
+        <div class="obpress-hotel-widget-gallery <?php if(count($HotelDescriptiveContents) < 6) echo 'flex-wrap'; ?>">
             <div class="obpress-hotels-swiper">
                 <!-- Slider main container -->
                 <div class="swiper-container obpress-hotel-swiper-container">
@@ -20,6 +22,9 @@
                                 if ($HotelDescriptiveContent->VendorMessagesType != null) {
                                     foreach ($HotelDescriptiveContent->VendorMessagesType->VendorMessages as $VendorMessage) {
                                         $hotel_description .= $VendorMessage->Description;
+                                        if(strlen($hotel_description) > 100) {
+                                            $hotel_description = substr($hotel_description, 0, 100) . '...';
+                                        }
                                     }
                                 }
                                 ?>
