@@ -1043,8 +1043,8 @@ class Hotels extends \Elementor\Widget_Base
 			}
 		}
 
-		if(strlen($firstHotelDesc) > 120) {
-			$firstHotelDesc = substr($firstHotelDesc, 0, 120) . '...';
+		if(strlen($firstHotelDesc) > 100) {
+			$firstHotelDesc = substr($firstHotelDesc, 0, 100) . '...';
 		}
 
 		$prevIcon = "";
@@ -1064,18 +1064,37 @@ class Hotels extends \Elementor\Widget_Base
 		if ($singleHotel == true) {
 
 
-				$descriptive_infos = BeApi::ApiCache('descriptive_infos_'.$chain.'_'.$language, BeApi::$cache_time['descriptive_infos'], function() use($hotels_in_chain, $language){
-					return BeApi::getHotelDescriptiveInfos($hotels_in_chain, $language);
-				});
+			$hotels_in_chain = [];
+			$hotels = BeApi::ApiCache('hotel_search_chain_'.$chain.'_'.$language.'_true', BeApi::$cache_time['hotel_search_chain'], function() use ($chain, $language){
+				return BeApi::getHotelSearchForChain($chain, "true",$language);
+			});
+		
+		
+			foreach($hotels->PropertiesType->Properties as $Property) {
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["HotelCode"] = $Property->HotelRef->HotelCode;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["HotelName"] = $Property->HotelRef->HotelName;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["ChainName"] = $Property->HotelRef->ChainName;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["Country"] = $Property->Address->CountryCode;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["City"] = $Property->Address->CityCode;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["StateProvCode"] = $Property->Address->StateProvCode;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["AddressLine"] = $Property->Address->AddressLine;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["Latitude"] = $Property->Position->Latitude;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["Longitude"] = $Property->Position->Longitude;
+				$hotels_in_chain[$Property->HotelRef->HotelCode]["MaxPartialPaymentParcel"] = $Property->MaxPartialPaymentParcel;
+			}
+
+			$descriptive_infos = BeApi::ApiCache('descriptive_infos_'.$chain.'_'.$language, BeApi::$cache_time['descriptive_infos'], function() use($hotels_in_chain, $language){
+				return BeApi::getHotelDescriptiveInfos($hotels_in_chain, $language);
+			});
 
 
-				$rooms = [];
+			$rooms = [];
 
-				foreach ($descriptive_infos->HotelDescriptiveContentsType->HotelDescriptiveContents as $HotelDescriptiveContent) {
-					foreach($HotelDescriptiveContent->FacilityInfo->GuestRoomsType->GuestRooms as $GuestRoom) {
-						$rooms[$HotelDescriptiveContent->HotelRef->HotelCode][$GuestRoom->ID] = $GuestRoom;
-					}
+			foreach ($descriptive_infos->HotelDescriptiveContentsType->HotelDescriptiveContents as $HotelDescriptiveContent) {
+				foreach($HotelDescriptiveContent->FacilityInfo->GuestRoomsType->GuestRooms as $GuestRoom) {
+					$rooms[$HotelDescriptiveContent->HotelRef->HotelCode][$GuestRoom->ID] = $GuestRoom;
 				}
+			}
 
 
 

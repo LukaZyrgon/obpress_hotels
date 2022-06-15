@@ -37,8 +37,15 @@ jQuery(window).on("elementor/frontend/init", function () {
         var hotelName = jQuery(this).attr("data-hotel-name");
         var hotelDesc = jQuery(this).attr("data-hotel-description");
         var hotelId = jQuery(this).attr("data-hotel-id");
-    
-        hotelDesc = hotelDesc.substring(0, 230) + "...";
+        if(hotelDesc != '') {
+          hotelDesc = hotelDesc.substring(0, 230) + "...";
+        }
+
+        if (  jQuery(".obpress-hotels-holder").hasClass("single-hotel-holder") ) {
+          var isSingleHotel = true;
+        } else {
+            var isSingleHotel = false;
+        }
 
         jQuery(".obpress-hotels-widget-info").find("h3").text(hotelName);
         jQuery(".obpress-hotels-widget-info").find("p").text(hotelDesc);

@@ -44,6 +44,7 @@
 .obpress-hotels-widget-info {
   justify-content: space-between;
   max-width: 622px;
+  width: 100%;
   background-color: #fff;
   margin-right: 9px;
   display: flex;

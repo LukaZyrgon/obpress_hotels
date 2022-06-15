@@ -30,6 +30,13 @@
                                         } else {
                                             $descriptionWithoutBr = $description;
                                         }
+
+                                        if($descriptionWithoutBr != '') {
+                                            if(strlen($descriptionWithoutBr) > 100) {
+                                                $descriptionWithoutBr = substr($descriptionWithoutBr, 0, 100) . '...';
+                                            }
+                                        }
+                                        
                                     ?>
 
                                         <div data-hotel-id="<?= $room->ID ?>" class="swiper-slide obpress-hotels-swiper-slide" data-hotel-description="<?= $descriptionWithoutBr ?>" data-hotel-name="<?= $room->DescriptiveText ?>">
