@@ -51,7 +51,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_widget_height',
 			[
 				'label' => esc_html__( 'Height', 'OBPress_Hotels' ),
@@ -64,9 +64,14 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
-					'unit' => 'px',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
 					'size' => 516,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 516,
+					'unit' => 'px',
 				],
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-widget-holder' => 'max-height: {{SIZE}}px',
@@ -75,12 +80,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_box_margin',
 			[
 				'label' => __( 'Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '9',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '9',
 					'bottom' => '0',
@@ -94,12 +107,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_box_padding',
 			[
 				'label' => __( 'Padding', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '86',
+					'right' => '100',
+					'bottom' => '53',
+					'left' => '100',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '86',
 					'right' => '100',
 					'bottom' => '53',
@@ -309,12 +330,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_box_text_margin',
 			[
 				'label' => __( 'Hotel Description Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '72',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '72',
@@ -482,12 +511,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'hotels_button_margin',
 			[
 				'label' => __( 'Button Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '22',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '22',
@@ -501,12 +538,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'hotels_button_padding',
 			[
 				'label' => __( 'Button Padding', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '16',
+					'right' => '65',
+					'bottom' => '16',
+					'left' => '65',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '16',
 					'right' => '65',
 					'bottom' => '16',
@@ -771,7 +816,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_slider_previous_nest_btn_width',
 			[
 				'label' => __( 'Button Width', 'OBPress_Hotels' ),
@@ -784,7 +829,12 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 35,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 35,
 				],
@@ -794,7 +844,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_previous_nest_btn_height',
 			[
 				'label' => __( 'Button Height', 'OBPress_Hotels' ),
@@ -807,7 +857,12 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 35,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 35,
 				],
@@ -817,12 +872,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_previous_button_margin',
 			[
 				'label' => __( 'Previous Button Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '80',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '80',
 					'bottom' => '0',
@@ -836,12 +899,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_next_button_margin',
 			[
 				'label' => __( 'Next Button Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '80',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '0',
@@ -898,12 +969,20 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_pagination_margin',
 			[
 				'label' => __( 'Pagination Margin', 'OBPress_Hotels' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '10',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '10',
 					'bottom' => '0',
@@ -917,7 +996,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_pagination_active_width',
 			[
 				'label' => __( 'Pagination Active Width', 'OBPress_Hotels' ),
@@ -930,7 +1009,12 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 30,
 				],
@@ -940,7 +1024,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_pagination_inactive_width',
 			[
 				'label' => __( 'Pagination Width', 'OBPress_Hotels' ),
@@ -953,7 +1037,12 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 20,
 				],
@@ -963,7 +1052,7 @@ class Hotels extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_hotels_pagination_height',
 			[
 				'label' => __( 'Pagination Height', 'OBPress_Hotels' ),
@@ -976,7 +1065,12 @@ class Hotels extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 8,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 8,
 				],
