@@ -116,5 +116,5 @@
 
 
 <?php else: ?>
-    <h1><?php _e('No rooms available', 'OBPress_RoomsList') ?></h1>
+    <h1><?php _e('No rooms available', 'OBPress_Hotels') ?></h1>
 <?php endif; ?>
