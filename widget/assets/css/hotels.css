@@ -76,32 +76,42 @@
 }
 
 .obpress-hotels-widget-button {
-  background-color: #000000;
+  background-color: #191919;
   border-width: 1px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 2.8px;
   color: #fff;
   font-family: "Montserrat";
-  /* margin-left: auto;
-  margin-right: auto; */
   padding: 16px 65px;
   margin-bottom: 22px;
   box-shadow: 0px 14px 34px #bead8e33;
   width: fit-content;
   align-self: center;
+  border: 1px solid #191919;
 }
 
 .obpress-hotels-widget-button:hover {
   cursor: pointer;
+  color: #191919;
+  border-color: #191919;
+  background-color: #fff;
 }
 
 .obpress-hotels-link {
   text-align: center;
-  text-decoration: underline !important;
   font-size: 16px;
   line-height: 19px;
-  color: #000000;
+  color: #191919;
+  padding: 15px 40px;
+  border: 1px solid #191919;
+  margin: auto;
+  width: fit-content;
+}
+
+.obpress-hotels-link:hover {
+  background-color: #191919;
+  color: #fff;
 }
 
 .obpress-hotels-link:hover {
@@ -243,19 +253,51 @@
     margin-top: 0px;    
 }
 
+.obpress-hotels-swiper-nav .swiper-button-prev svg {
+  transform: rotate(180deg);
+}
+
+.obpress-hotels-swiper-nav .swiper-button-prev svg,
+.obpress-hotels-swiper-nav .swiper-button-next svg {
+  width: 100%;
+  height: 100%;
+}
+
+.custtom_bg_color {
+  fill: #000;
+  stroke: #000;
+}
+.custtom_color {
+  stroke: #fff;
+}
+
 .obpress-hotels-swiper-nav .swiper-button-prev::after, 
 .obpress-hotels-swiper-nav .swiper-button-next::after {
   content: unset;
 }
 
 .obpress-hotels-swiper-nav .swiper-button-prev {
-    background-image: url(../icons/prev.svg);
+    background-image: unset;
     margin-right: 80px;    
+    transition: 0.3s;
 }
 
 .obpress-hotels-swiper-nav .swiper-button-next {
-    background-image: url(../icons/next.svg);
+    background-image: unset;
     margin-left: 80px;
+    transition: 0.3s;
+}
+
+.obpress-hotels-swiper-nav svg:hover .custtom_bg_color {
+  stroke: #000;
+}
+
+.obpress-hotels-swiper-nav svg:hover .custtom_color {
+  stroke: #000;
+}
+
+.obpress-hotels-swiper-nav svg:hover .custtom_bg_color {
+  fill: #fff;
 }
 
 .obpress-hotels-swiper-nav .swiper-pagination-bullet {

@@ -420,7 +420,7 @@ class Hotels extends \Elementor\Widget_Base
 				'label' => __('Button Background Hover Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#000',
+				'default' => '#fff',
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-widget-button:hover' => 'background-color: {{obpress_hotels_button_background_hover_color}}'
 				],
@@ -433,7 +433,7 @@ class Hotels extends \Elementor\Widget_Base
 				'label' => __('Button Text Hover Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#fff',
+				'default' => '#191919',
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-widget-button:hover' => 'color: {{obpress_hotels_button_text_hover_color}}'
 				],
@@ -504,7 +504,7 @@ class Hotels extends \Elementor\Widget_Base
 				'label' => __('Button Border Hover Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#fff',
+				'default' => '#191919',
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-widget-button:hover' => 'border-color: {{hotels_button_border_hover_color}}'
 				],
@@ -597,9 +597,22 @@ class Hotels extends \Elementor\Widget_Base
 				'label' => __('Link Text Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#4b8cf4',
+				'default' => '#191919',
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-link' => 'color: {{obpress_hotels_link_text_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_link_text_bg_color',
+			[
+				'label' => __('Link Text Bg Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-link' => 'background-color: {{obpress_hotels_link_text_bg_color}}'
 				],
 			]
 		);
@@ -631,9 +644,35 @@ class Hotels extends \Elementor\Widget_Base
 				'label' => __('Link Hover Color', 'OBPress_Hotels'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#4b8cf4',
+				'default' => '#fff',
 				'selectors' => [
 					'.obpress-hotels-holder .obpress-hotels-link:hover' => 'color: {{obpress_hotels_link_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_link_hover_bg_color',
+			[
+				'label' => __('Link Hover Bg Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#191919',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-link:hover' => 'background-color: {{obpress_hotels_link_hover_bg_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_link_hover_border_color',
+			[
+				'label' => __('Link Hover Border Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#191919',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-link:hover' => 'border-color: {{obpress_hotels_link_hover_border_color}}'
 				],
 			]
 		);
@@ -954,18 +993,103 @@ class Hotels extends \Elementor\Widget_Base
 		);		
 
 		$this->add_control(
-			'obpress_hotels_pagination_bullet_back_icon',
+			'obpress_hotels_next_and_previous_buttons_hover_transition',
 			[
-				'label' => __( 'Back Icon', 'OBPress_Hotels' ),
-				'type' => \Elementor\Controls_Manager::ICONS,
+				'label' => __( 'Buttons Hover Transition(seconds)', 'OBPress_Hotels' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 's'],
+				'range' => [
+					's' => [
+						'min' => 0,
+						'max' => 5,
+						'step' => 0.1,
+					]
+				],
+				'default' => [
+					'unit' => 's',
+					'size' => 0.3,
+				],
+				'selectors' => [
+					'.obpress-hotels-holder svg .custtom_bg_color, .obpress-hotels-holder svg .custtom_color' => 'transition: {{SIZE}}s',
+				]
 			]
 		);
 
 		$this->add_control(
-			'obpress_hotels_pagination_bullet_next_icon',
+			'obpress_hotels_next_and_previous_buttons_bg_color',
 			[
-				'label' => __( 'Next Icon', 'OBPress_Hotels' ),
-				'type' => \Elementor\Controls_Manager::ICONS,
+				'label' => __('Buttons Bg Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav .custtom_bg_color' => 'fill: {{obpress_hotels_next_and_previous_buttons_bg_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_next_and_previous_buttons_border_color',
+			[
+				'label' => __('Buttons Border Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav .custtom_bg_color' => 'stroke: {{obpress_hotels_next_and_previous_buttons_border_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_next_and_previous_buttons_arrows_color',
+			[
+				'label' => __('Buttons Arrows Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav .custtom_color' => 'stroke: {{obpress_hotels_next_and_previous_buttons_arrows_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_next_and_previous_buttons_bg_hover_color',
+			[
+				'label' => __('Buttons Bg Hover Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav svg:hover .custtom_bg_color' => 'fill: {{obpress_hotels_next_and_previous_buttons_bg_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_next_and_previous_buttons_border_hover_color',
+			[
+				'label' => __('Buttons Border Hover Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav svg:hover .custtom_bg_color' => 'stroke: {{obpress_hotels_next_and_previous_buttons_border_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_hotels_next_and_previous_buttons_arrows_hover_color',
+			[
+				'label' => __('Buttons Arrows Hover Color', 'OBPress_Hotels'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-hotels-holder .obpress-hotels-swiper-nav svg:hover .custtom_color' => 'stroke: {{obpress_hotels_next_and_previous_buttons_arrows_hover_color}}'
+				],
 			]
 		);
 

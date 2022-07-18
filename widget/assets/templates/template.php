@@ -41,9 +41,29 @@
                 </div>
             </div>
             <div class="obpress-hotels-swiper-nav">
-                <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image: url('. $prevIcon . ')"';} ?>></div>
+                <div class="swiper-button-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34.964" height="34.964" viewBox="0 0 34.964 34.964">
+                        <g id="back" data-name="back" transform="translate(34.964 34.964) rotate(180)">
+                            <g class="custtom_bg_color" id="Rectangle_4721" data-name="Rectangle 4721" transform="translate(0 0)" fill="none" stroke="#191919" stroke-width="1">
+                            <rect width="34.964" height="34.964" stroke="none"/>
+                            <rect x="0.5" y="0.5" width="33.964" height="33.964" fill="none"/>
+                            </g>
+                            <path class="custtom_color" id="Path_10521" data-name="Path 10521" d="M0,0,7.095,6.845,13.94,0" transform="translate(20.049 9.937) rotate(90)" fill="none" stroke="#191919" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </g>
+                    </svg>
+                </div>
                 <div class="swiper-pagination <?php if($settings_hotels['hotels_slide_pagination'] == 'lines'){echo 'obpress-hotels-swiper-lines';} ?><?php if($settings_hotels['hotels_slide_pagination'] == 'disabled'){echo 'obpress-swiper-pagination-disabled';} ?>"></div>
-                <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image: url( '. $nextIcon . ')"';} ?>></div>
+                <div class="swiper-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34.964" height="34.964" viewBox="0 0 34.964 34.964">
+                        <g id="next" data-name="next" transform="translate(34.964 34.964) rotate(180)">
+                            <g class="custtom_bg_color" id="Rectangle_4721" data-name="Rectangle 4721" transform="translate(0 0)" fill="none" stroke="#191919" stroke-width="1">
+                            <rect width="34.964" height="34.964" stroke="none"/>
+                            <rect x="0.5" y="0.5" width="33.964" height="33.964" fill="none"/>
+                            </g>
+                            <path class="custtom_color" id="Path_10521" data-name="Path 10521" d="M0,0,7.095,6.845,13.94,0" transform="translate(20.049 9.937) rotate(90)" fill="none" stroke="#191919" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -76,9 +96,29 @@
             </div>
         </div>
         <div class="obpress-hotels-swiper-nav">
-            <div class="swiper-button-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image: url( '. $prevIcon . ')"';} ?>></div>
+            <div class="swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34.964" height="34.964" viewBox="0 0 34.964 34.964">
+                    <g id="back" data-name="back" transform="translate(34.964 34.964) rotate(180)">
+                        <g class="custtom_bg_color" id="Rectangle_4721" data-name="Rectangle 4721" transform="translate(0 0)" fill="none" stroke="#191919" stroke-width="1">
+                        <rect width="34.964" height="34.964" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="33.964" height="33.964" fill="none"/>
+                        </g>
+                        <path class="custtom_color" id="Path_10521" data-name="Path 10521" d="M0,0,7.095,6.845,13.94,0" transform="translate(20.049 9.937) rotate(90)" fill="none" stroke="#191919" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                </svg>
+            </div>
             <div class="swiper-pagination <?php if($settings_hotels['hotels_slide_pagination'] == 'lines'){echo 'obpress-hotels-swiper-lines';} ?><?php if($settings_hotels['hotels_slide_pagination'] == 'disabled'){echo 'obpress-swiper-pagination-disabled';} ?>"></div>
-            <div class="swiper-button-next" <?php if(!empty($nextIcon)){ echo 'style="background-image: url('. $nextIcon . ')"';} ?>></div>
+            <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34.964" height="34.964" viewBox="0 0 34.964 34.964">
+                    <g id="next" data-name="next" transform="translate(34.964 34.964) rotate(180)">
+                        <g class="custtom_bg_color" id="Rectangle_4721" data-name="Rectangle 4721" transform="translate(0 0)" fill="none" stroke="#191919" stroke-width="1">
+                        <rect width="34.964" height="34.964" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="33.964" height="33.964" fill="none"/>
+                        </g>
+                        <path class="custtom_color" id="Path_10521" data-name="Path 10521" d="M0,0,7.095,6.845,13.94,0" transform="translate(20.049 9.937) rotate(90)" fill="none" stroke="#191919" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                </svg>
+            </div>
         </div>        
     </div>
 </div>
