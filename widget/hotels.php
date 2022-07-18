@@ -704,10 +704,7 @@ class Hotels extends \Elementor\Widget_Base
 							'unit' => 'px',
 							'size' => '19',
 						],
-					],
-					'text_decoration' => [
-						'default' => 'underline',
-					],
+					]
 				],
 			]
 		);
