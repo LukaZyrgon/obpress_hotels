@@ -91,6 +91,7 @@ jQuery(window).on("elementor/frontend/init", function () {
 
         pagination: {
           el: ".ob-mob-hotels-holder .swiper-pagination",
+          clickable: true
         },
     
         // Navigation arrows
